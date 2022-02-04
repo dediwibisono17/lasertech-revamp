@@ -529,9 +529,6 @@ footer {
     }
     .side {
         display: block;
-        border-bottom: 2px solid white;
-        padding-bottom: 8px;
-        margin-bottom: 8px;
         &-left {
             display: inline-block;
             width: 20%;
@@ -553,5 +550,13 @@ footer {
         list-style-type: none;
         margin: 0;
         padding: 0;
+        li {
+            border-bottom: 2px solid white;
+            padding-bottom: 8px;
+            margin-bottom: 8px;
+            &:last-child {
+                border-bottom: 2px solid transparent;
+            }
+        }
     }
 }
