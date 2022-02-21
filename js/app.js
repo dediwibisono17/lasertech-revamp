@@ -22,17 +22,17 @@ $(document).ready(function() {
 
 })
 
-$(window).scroll(function() {
-    var nav = $('.bg-scroll');
-    var top = 20;
-    if ($(window).scrollTop() >= top) {
+// $(window).scroll(function() {
+//     var nav = $('.bg-scroll');
+//     var top = 20;
+//     if ($(window).scrollTop() >= top) {
 
-        nav.addClass('bg-black');
+//         nav.addClass('bg-black');
 
-    } else {
-        nav.removeClass('bg-black');
-    }
-});
+//     } else {
+//         nav.removeClass('bg-black');
+//     }
+// });
 
 $(".chevron-wrapper").click(function() {
     $('html, body').animate({
@@ -51,8 +51,8 @@ $('.top-slider').slick({
     responsive: [{
             breakpoint: 1024,
             settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
+                slidesToShow: 1,
+                slidesToScroll: 1,
                 infinite: true,
                 dots: true
             }
@@ -60,8 +60,8 @@ $('.top-slider').slick({
         {
             breakpoint: 600,
             settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
+                slidesToShow: 1,
+                slidesToScroll: 1
             }
         },
         {
