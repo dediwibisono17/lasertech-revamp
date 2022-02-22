@@ -1,5 +1,11 @@
 $(document).ready(function() {
     new WOW().init();
+    $('[data-toggle="tooltip"]').tooltip();
+
+    $(".navbar-toggler").click(function() {
+        $('.helper-task').toggleClass('overflow')
+    })
+
     $(".scrolltop").hide();
     $(window).scroll(function() {
         if ($(this).scrollTop() > 100) {
@@ -14,23 +20,19 @@ $(document).ready(function() {
         }, 800);
     });
 
-    $(".navbar-toggler").click(() => {
-        // alert(1)
-        $(".helper-task").toggleClass('overflow')
-    })
 })
 
-$(window).scroll(function() {
-    var nav = $('.bg-scroll');
-    var top = 20;
-    if ($(window).scrollTop() >= top) {
+// $(window).scroll(function() {
+//     var nav = $('.bg-scroll');
+//     var top = 20;
+//     if ($(window).scrollTop() >= top) {
 
-        nav.addClass('bg-black');
+//         nav.addClass('bg-black');
 
-    } else {
-        nav.removeClass('bg-black');
-    }
-});
+//     } else {
+//         nav.removeClass('bg-black');
+//     }
+// });
 
 $(".chevron-wrapper").click(function() {
     $('html, body').animate({
@@ -49,8 +51,8 @@ $('.top-slider').slick({
     responsive: [{
             breakpoint: 1024,
             settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
+                slidesToShow: 1,
+                slidesToScroll: 1,
                 infinite: true,
                 dots: true
             }
@@ -58,8 +60,8 @@ $('.top-slider').slick({
         {
             breakpoint: 600,
             settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
+                slidesToShow: 1,
+                slidesToScroll: 1
             }
         },
         {
@@ -76,102 +78,80 @@ $('.top-slider').slick({
     ]
 });
 
-
-
-$.ajax({
-    url: '/kertakayu/js/benefit.json',
-    type: 'GET',
-    beforeSend: function() {
-        $(".loading").show();
-    },
-    complete: function() {
-        $(".loading").hide();
-    },
-    // <div class="card__circle">
-    //     <div class="image">
-    //         <img src="${response[a].img}" alt="">
-    //     </div>
-    // </div>
-    success: function(response) {
-        console.log(response);
-        var a;
-        for (a = 0; a < response.length; a++) {
-            $(".benefit").append(`
-            <li class="wrap">
-                <div class="card_">
-                    <div class="content">
-                        <h3 class="font-std font-bold">
-                            ${response[a].title}
-                        </h3>
-                        <p class="font-std">${response[a].desc}</p>
-                        
-                    </div>
-                </div>
-            </li>
-            `)
+$('.campaign').slick({
+    dots: true,
+    infinite: true,
+    arrows: false,
+    speed: 300,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    adaptiveHeight: true,
+    responsive: [{
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: true
+            }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                centerPadding: '60px',
+                adaptiveHeight: true
+            }
         }
-    }
-})
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+    ]
+});
 
-$.ajax({
-    url: '/kertakayu/js/material.json',
-    type: 'GET',
-    beforeSend: function() {
-        $(".loading").show();
-    },
-    complete: function() {
-        $(".loading").hide();
-    },
-    success: function(response) {
-        console.log(response);
-        var a;
-        for (a = 0; a < response.length; a++) {
-            $(".material").append(`
-            <div class="material-content">
-                <div class="card_">
-                    <div class="content">
-                        <h3 class="font-medium font-bold upper">
-                            ${response[a].title}
-                        </h3>
-                        <div class="desc font-small">${response[a].desc}</div>
-                        </div>
-                </div>
-            </div>
-                `)
+$(".article-slider").slick({
+    dots: true,
+    infinite: true,
+    arrows: true,
+    speed: 300,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    adaptiveHeight: true,
+    responsive: [{
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: true
+            }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                centerPadding: '60px',
+                adaptiveHeight: true
+            }
         }
-        $(".material").not('.slick-initialized').slick({
-            dots: false,
-            infinite: false,
-            speed: 300,
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            adaptiveHeight: true,
-            responsive: [{
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 1,
-                        infinite: true,
-                        dots: true
-                    }
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        centerPadding: '60px',
-                        adaptiveHeight: true
-                    }
-                }
-            ]
-        });
-    }
-})
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+    ]
+});
