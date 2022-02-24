@@ -155,3 +155,13 @@ $(".article-slider").slick({
         // instead of a settings object
     ]
 });
+
+$(".show-hamburger").hide()
+$(".hamburger-rotate").click(() => {
+    // alert(1)
+    $(".show-hamburger").fadeIn()
+})
+
+$(".close_").click(() => {
+    $(".show-hamburger").hide()
+})
