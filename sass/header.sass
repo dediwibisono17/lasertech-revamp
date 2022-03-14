@@ -35,6 +35,8 @@ header
 .navbar-dark 
     i
         color: black
+        @media screen and(max-width:$max)
+            color: white
 .navbar
     height: 100%
     display: block !important
@@ -46,8 +48,9 @@ header
         // background: $color-yellow
 .navbar-collapse 
     @media screen and ( max-width: $max )
-        background: rgba(255,255 ,255 ,.8 )!important
+        background: rgba(0,0,0 ,1 )!important
         backdrop-filter: blur(8px)
+        top: 68px !important
 .sosmed
     @media screen and ( max-width: $max )
         margin-bottom: 8px
@@ -78,6 +81,10 @@ header
     bottom: 0
     z-index: 999
     overflow-x: hidden
+    @media screen and(max-width:766px) 
+        bottom: inherit
+        width: 100%
+        padding: 0 16px
     // border-bottom: 2px solid rgba(0,0 ,0 ,.8 )
     .form-control
         background-color: transparent
@@ -257,6 +264,12 @@ header
     width: 200px
     left: -64px
     transform: rotate(-90deg)
+    @media screen and(max-width:$max)
+        transform: rotate(0deg)
+        bottom: inherit
+        left: 0
+        position: relative
+        top: 16px
     a
         color: white
         font-weight: bold
@@ -270,27 +283,30 @@ header
     left: 28px
     // transform: rotate(-90deg)
     font-size: 20px
-    a 
-        i
-            color: white
+    i
+        color: white
 
 .hamburger-rotate
     position: absolute
     bottom: 320px
     left: 28px
     cursor: pointer
+    @media screen and(max-width:$max)
+        display: none !important
+
     i
         color: white
         font-size: 22px
 
 .show-hamburger
-    position: fixed
-    left: 0
-    right: 0
-    top: 0
-    bottom: 0
-    background: black
-    z-index: 1991
+    a 
+        position: fixed
+        left: 0
+        right: 0
+        top: 0
+        bottom: 0
+        background: black
+        z-index: 1991
     // transition: ease-in-out
 
 .all
