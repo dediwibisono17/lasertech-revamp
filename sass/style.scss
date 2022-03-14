@@ -157,6 +157,9 @@ section {
     height: 100vh;
     padding: 0;
     z-index: 2;
+    @media screen and (max-width:$max) {
+        padding: 24px 0 !important;
+    }
     .helping {
         position: absolute;
         background: rgba($color: #000000, $alpha: .7);
@@ -192,6 +195,7 @@ section {
         height: auto;
         z-index: 6;
         background: linear-gradient(160deg, rgba($primary, .8), rgba($primary, .8) 50%, rgba(black, .8) 50%, rgba(black, .8));
+        
     }
 }
 
