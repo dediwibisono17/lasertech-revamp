@@ -92,6 +92,9 @@ main {
 
 main {
     overflow-x: hidden;
+    @media screen and (max-width:766px) {
+        margin-top: 54px;
+    }
 }
 
 section {
