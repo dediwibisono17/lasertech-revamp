@@ -79,7 +79,7 @@ $('.top-slider').slick({
 });
 
 $('.campaign').slick({
-    dots: true,
+    dots: false,
     infinite: true,
     arrows: false,
     speed: 300,
@@ -118,7 +118,7 @@ $('.campaign').slick({
 });
 
 $(".article-slider").slick({
-    dots: true,
+    dots: false,
     infinite: true,
     arrows: true,
     speed: 300,
