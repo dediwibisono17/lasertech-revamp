@@ -156,7 +156,7 @@ $(".article-slider").slick({
     ]
 });
 
-$(".show-hamburger").hide()
+// $(".show-hamburger").hide()
 $(".hamburger-rotate").click(() => {
     // alert(1)
     $(".show-hamburger").fadeIn()
@@ -164,4 +164,11 @@ $(".hamburger-rotate").click(() => {
 
 $(".close_").click(() => {
     $(".show-hamburger").hide()
+})
+
+$(".search-rotate").click(() => {
+    $(".show-search").fadeIn()
+})
+$(".close__").click(() => {
+    $(".show-search").hide()
 })
